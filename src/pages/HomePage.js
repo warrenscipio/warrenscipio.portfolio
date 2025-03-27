@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
   const skills = [
     { category: 'Frontend', items: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Webpack', 'Redux'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'RESTful APIs', 'GraphQL'] },
-    { category: 'Other', items: ['Git', 'GitHub', 'CI/CD', 'Agile Methodologies', 'Problem Solving'] }
+    { category: 'Backend', items: ['Node.js', 'Express', 'RESTful APIs', 'Java','Godot','Cloudflare'] },
+    { category: 'Other', items: ['Git', 'GitHub', 'CI/CD', 'Agile Methodologies', 'Playwright','Problem Solving'] }
   ];
   
   const interests = [
@@ -14,8 +14,8 @@ const HomePage = () => {
       description: 'Building responsive and intuitive user interfaces that solve real-world problems.'
     },
     {
-      title: 'Open Source',
-      description: 'Contributing to and maintaining open source projects to give back to the community.'
+      title: 'Game Development',
+      description: 'Designing and bringing to life game ideas that players can enjoy.'
     },
     {
       title: 'Learning New Technologies',
@@ -26,9 +26,9 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <section className="hero">
-        <h1>Hello, I'm <span className="highlight">Warren Scipo</span></h1>
-        <h2>Fullstack Engineer & Problem Solver</h2>
-        <p>I build modern web applications with a focus on user experience and clean code.</p>
+        <h1>Hello, I'm <span className="highlight">Warren Scipio</span></h1>
+        <h2>Fullstack Engineer & Game Developer</h2>
+        <p>I build modern web applications with a focus on user experience and turn my game design ideas into reality.</p>
         <div className="hero-buttons">
           <Link to="/projects" className="btn primary">View My Work</Link>
           <Link to="/profile" className="btn secondary">About Me</Link>

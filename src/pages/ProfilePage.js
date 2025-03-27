@@ -67,8 +67,8 @@ const ProfilePage = () => {
           <p>Passionate web developer with 5+ years of experience in building modern, responsive web applications. Specialized in React.js ecosystem and committed to writing clean, performant code.</p>
           <div className="profile-contact">
             <a href="mailto:warrenscipio@gmail.com" className="contact-link">warrenscipio@gmail.com</a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="contact-link">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
+            <a href="https://github.com/warrenscipio" target="_blank" rel="noopener noreferrer" className="contact-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/warrenscipio/" target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
           </div>
         </div>
       </section>
@@ -243,7 +243,7 @@ const ProfilePage = () => {
         }
         
         .timeline-content {
-          background-color: white;
+          background-color: rgb(49, 49, 49);
           border-radius: 8px;
           padding: 20px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
