@@ -3,43 +3,77 @@ import React from 'react';
 const ProfilePage = () => {
   const experiences = [
     {
-      title: 'Senior Frontend Developer',
-      company: 'Tech Solutions Inc.',
-      period: 'Jan 2022 - Present',
-      description: [
-        'Lead the frontend development of the company\'s flagship product, resulting in a 40% increase in user engagement.',
-        'Implemented modern React practices including hooks, context API, and custom hook patterns to improve code quality and maintainability.',
-        'Mentored junior developers through code reviews and pair programming sessions.'
-      ]
+      company: 'Data Annotations',
+      roles: [{
+        title: 'Freelance Engineer',
+        period: 'May 2024 - present',
+        description: [
+          'Enhanced AI model training by evaluating responses and working with different codebases identifying the correctness of the models.',
+          'Conducted quality assurance on user prompts to maintain high training standards.'
+      ]}],
     },
     {
-      title: 'Frontend Developer',
+      company: 'Oracle Cerner',
+      roles:[{     
+        title: 'Senior Full-Stack Engineer',
+        period: 'Jan 2021 - Oct 2022',
+        description: [
+          'Managed release responsibilities across various environments.',
+          'Translated concepts into actionable stories, creating comprehensive documentation for future enhancements.',
+          'Served as the frontend lead on a project requiring frequent stakeholder communication.',
+          'Meetings with stakeholders to determine priority of different requirements'
+        ]
+      }
+      , {
+        title: 'Software Engineer II',
+        period: 'Jan 2019 - Jan 2021',
+        description: [
+          'Developed and maintained web applications using React.js, Node.js, and Express.',
+          'Implemented new features and optimized existing ones in the company’s flagship product.',
+          'Collaborated with cross-functional teams to define, design, and ship new features.',
+          'Participated in code reviews and contributed to team knowledge sharing.',
+          'Worked with RESTful APIs and integrated third-party services.'
+        ]
+      },
+      {
+        title: 'Software Engineer I',
+        period: 'May 2016 - Jan 2019',
+        description: [
+          'Mentored junior developers and assisted in onboarding new team members.',
+          'Delivered enhancements and defect fixes for various projects, primarily using JavaScript, JAVA and SQL-like query languages.',
+          'Wrote Integration and unit testing, worked with test plans and running new enhancements/fixed defects in development domains'
+        ]
+      }],
+    },
+    {
       company: 'Digital Innovations',
-      period: 'Mar 2019 - Dec 2021',
-      description: [
-        'Developed responsive web applications using React, Redux, and TypeScript.',
-        'Worked closely with designers to implement pixel-perfect UI components.',
-        'Improved application performance by 35% through code optimization and lazy loading techniques.'
-      ]
+      roles: [{
+        title: 'Frontend Developer',
+        period: 'Mar 2019 - Dec 2021',
+        description: [
+          'Developed responsive web applications using React, Redux, and TypeScript.',
+          'Worked closely with designers to implement pixel-perfect UI components.',
+          'Improved application performance by 35% through code optimization and lazy loading techniques.'
+        ]}],
     },
     {
-      title: 'Web Developer Intern',
-      company: 'StartUp Labs',
-      period: 'Jun 2018 - Feb 2019',
-      description: [
-        'Assisted in the development of client websites using HTML5, CSS3, and JavaScript.',
-        'Implemented responsive designs and ensured cross-browser compatibility.',
-        'Participated in daily stand-ups and agile development processes.'
-      ]
+      company: 'NYQuist INDustires, Inc.',
+      roles: [{
+        title: 'Web Developer Intern',
+        period: 'May 2015 - Aug 2015',
+        description: [
+          'Assisted in the development of social media app and a iOS game using Swift.',
+          'Implemented responsive designs and ensured cross-browser compatibility implemented Facebook and Twitter logins using the SDKs.',
+          'implemented a power up system, optimized UI through the use of Sprite Kit scenes, collaborated with Chief Design Officer to implement the art in game.'
+        ]}],
     }
   ];
 
   const education = [
     {
       degree: 'Bachelor of Science in Computer Science',
-      institution: 'University of Technology',
-      year: '2014 - 2018',
-      details: 'GPA: 3.8/4.0, Dean\'s List, Specialized in Web Development and Software Engineering'
+      institution: 'University of Kansas',
+      year: '2012 - 2016'
     }
   ];
 
@@ -50,8 +84,8 @@ const ProfilePage = () => {
   ];
 
   const skills = {
-    advanced: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Webpack', 'Git'],
-    intermediate: ['Node.js', 'Express.js', 'TypeScript', 'GraphQL', 'Jest', 'MongoDB'],
+    advanced: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Webpack', 'Git', 'Godot'],
+    intermediate: ['Node.js', 'Express.js', 'TypeScript', 'GraphQL', 'Jest', 'MongoDB', 'Playwright'],
     familiar: ['AWS', 'Docker', 'Python', 'React Native', 'Firebase']
   };
 
@@ -62,7 +96,7 @@ const ProfilePage = () => {
           <div className="profile-image-placeholder">WS</div>
         </div>
         <div className="profile-info">
-          <h1>Your Name</h1>
+          <h1>Warren Scipio</h1>
           <h2>Senior Frontend Developer</h2>
           <p>Passionate web developer with 5+ years of experience in building modern, responsive web applications. Specialized in React.js ecosystem and committed to writing clean, performant code.</p>
           <div className="profile-contact">
@@ -80,17 +114,21 @@ const ProfilePage = () => {
             <div key={index} className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
+                {exp.roles.map((role, idx) => (
+                <div key={idx} className="role">
                 <div className="timeline-header">
-                  <h3>{exp.title}</h3>
-                  <span className="timeline-period">{exp.period}</span>
+                {idx == 0 && <h3>{exp.company}</h3>}
                 </div>
-                <div className="timeline-company">{exp.company}</div>
+                <div className="timeline-company">{role.title}<span className="timeline-period">{" ("+role.period+")"}</span></div>
                 <ul className="timeline-description">
-                  {exp.description.map((item, idx) => (
+                  {role.description.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
                 </ul>
-              </div>
+                </div>
+                ))}
+                </div>
+              
             </div>
           ))}
         </div>
@@ -139,21 +177,6 @@ const ProfilePage = () => {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <h2 className="section-title">Certifications</h2>
-        <div className="certifications-list">
-          {certifications.map((cert, index) => (
-            <div key={index} className="certification-item">
-              <div className="certification-year">{cert.year}</div>
-              <div className="certification-content">
-                <h3>{cert.name}</h3>
-                <div className="certification-issuer">Issued by {cert.issuer}</div>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -240,13 +263,21 @@ const ProfilePage = () => {
           border-radius: 50%;
           border: 2px solid #0366d6;
           background-color: white;
+          
         }
         
         .timeline-content {
           background-color: rgb(49, 49, 49);
-          border-radius: 8px;
           padding: 20px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          border-radius: 8px;
+        }
+
+        .timeline-content.role {
+          background-color: rgb(49, 49, 49);
+          padding: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          border-radius: 8px;
         }
         
         .timeline-header {
