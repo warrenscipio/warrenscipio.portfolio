@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,43 +10,43 @@ const ProjectsPage = () => {
   const sampleProjects = [
     {
       id: 1,
-      title: 'E-commerce Platform',
-      description: 'A full-featured online shopping platform with cart, checkout, and payment processing.',
+      title: 'Custom Product Tool (React)',
+      description: 'A felxible online product editor to edit, send, and download image data.This version is built using React for a more streamlined experience.',
       image: '/api/placeholder/400/250',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      technologies: ['React', 'Node.js', 'Javascript', 'WIX integration'],
       category: 'Full Stack',
-      githubUrl: 'https://github.com/yourusername/ecommerce-platform',
-      demoUrl: 'https://ecommerce-demo.example.com'
+      githubUrl: 'https://github.com/warrenscipio/GDC-custom-product-host',
+      demoUrl: 'https://warrenscipio.github.io/GDC-custom-product-host/'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A Kanban-style task management application with drag-and-drop functionality.',
+      title: 'Custom Product Tool (Godot)',
+      description: 'A felxible online product editor to edit, send, and download image data. This version is built using Godot for a more interactive experience.',
       image: '/api/placeholder/400/250',
-      technologies: ['React', 'Redux', 'Firebase'],
-      category: 'Frontend',
-      githubUrl: 'https://github.com/yourusername/task-manager',
-      demoUrl: 'https://task-app-demo.example.com'
+      technologies: ['GDScript', 'Node.js', 'Javascript', 'WIX integration'],
+      category: 'Full Stack',
+      githubUrl: 'https://github.com/warrenscipio/godot-web-app-host',
+      demoUrl: 'https://warrenscipio.github.io/godot-web-app-host/'
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'Real-time weather dashboard with location search and 5-day forecast.',
+      title: 'Pathfinder Roll20 Chrome extension',
+      description: 'Chrome extension that interacts with the real-time chat system in Roll20 to provide quick access to custom roll macros.',
       image: '/api/placeholder/400/250',
-      technologies: ['React', 'OpenWeather API', 'Chart.js'],
+      technologies: ['Javascript', 'Node.js', 'Webpack'],
       category: 'Frontend',
-      githubUrl: 'https://github.com/yourusername/weather-dashboard',
-      demoUrl: 'https://weather-dash.example.com'
+      githubUrl: 'https://github.com/warrenscipio/pathfinder-roll20-extension',
+      demoUrl: ''
     },
     {
       id: 4,
-      title: 'Blog API',
-      description: 'RESTful API for a blog application with authentication and authorization.',
+      title: 'General Test Maintainer',
+      description: 'A backend application that allows users to do CRUD operations for creating data temporarily on several Oracle tables. This project was used to improve the efficiency of testing by allowing users to create and manage test data easily. The application was made to be flexible and was used by several Cerner Oracle teams.',
       image: '/api/placeholder/400/250',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
+      technologies: ['Java', 'Maven', 'Apache Velocity', 'Oracle DB'],
       category: 'Backend',
-      githubUrl: 'https://github.com/yourusername/blog-api',
-      demoUrl: 'https://blog-api.example.com/docs'
+      githubUrl: 'https://github.com/warrenscipio/Feature-Flag-test-project',
+      demoUrl: ''
     },
     {
       id: 5,
@@ -59,17 +60,27 @@ const ProjectsPage = () => {
     },
     {
       id: 6,
-      title: 'Chat Application',
-      description: 'Real-time chat application with private messaging and group chats.',
+      title: 'Wandering Talos',
+      description: 'A small puzzel game made in a Godot Wild Jam. The game features a rock... and a path that the player must navigate to reach the end...if they can find the end.',
       image: '/api/placeholder/400/250',
-      technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      category: 'Full Stack',
-      githubUrl: 'https://github.com/yourusername/chat-app',
-      demoUrl: 'https://chat-app.example.com'
+      technologies: ['GDScript'],
+      category: 'Game Development',
+      githubUrl: 'https://github.com/warrenscipio/folklore-game-jam',
+      demoUrl: 'https://warrenscipio.itch.io/wandering-talos'
+    },
+    {
+      id: 7,
+      title: 'Burger Blaster',
+      description: 'A small game made in a Godot Wild Jam. You are the last food stand, will you feed everyone or will you... continue to feed everyone... may your burgers strike true.',
+      image: '/api/placeholder/400/250',
+      technologies: ['GDScript'],
+      category: 'Game Development',
+      githubUrl: 'https://github.com/warrenscipio/last-stand-game-jam',
+      demoUrl: 'https://ryancross.itch.io/burger-blaster'
     }
   ];
 
-  const categories = ['All', 'Frontend', 'Backend', 'Full Stack', 'Mobile'];
+  const categories = ['All', 'Frontend', 'Backend', 'Full Stack', 'Game Development'];
 
   // Simulate fetching projects from an API or GitHub
   useEffect(() => {
@@ -168,7 +179,7 @@ const ProjectsPage = () => {
             </div>
           )}
           <div className="projects-footer">
-            <div className="projects-fade"></div>
+            
           </div>
         </main>
       </div>
